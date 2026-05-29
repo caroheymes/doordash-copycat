@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       - name: Print greeting
         run: echo "👋 Hello from Jedha!"
@@ -36,11 +36,11 @@ jobs:
             sleep 5
           done
           echo "API failed to start ❌"
-          docker logs fee-service || true
+          docker logs doordash-api || true
           exit 1
 
       - name: Setup Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v5
         with:
           python-version: "3.10"
 
